@@ -4,6 +4,7 @@ namespace Ecommerce.Service.Dtos
 {
     public class ShippingDto
     {
+        public Guid Id { get; set; }
         public string ClientId { get; set; }
         public string Country { get; set; }
         public string Department { get; set; }
@@ -14,7 +15,6 @@ namespace Ecommerce.Service.Dtos
 
     public class ShippingUpdateDto : ShippingDto
     {
-        public Guid Id { get; set; }
         public DateTime? ModificationDate { get; set; }
     }
 }

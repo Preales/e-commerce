@@ -26,7 +26,7 @@ namespace Ecommerce.Service.Services.Base
 
         public async Task<T2> GetByIdAsync(T4 id)
         {
-            var result = await _repository.FirstOrDefaultAsync(x => x.Id.ToString() == id.ToString() && !x.Deleted).ConfigureAwait(false);
+            var result = await _repository.FirstOrDefaultAsync(x => id.Equals(x.Id) && !x.Deleted);
             return _mapper.Map<T2>(result);
         }
 
@@ -46,7 +46,7 @@ namespace Ecommerce.Service.Services.Base
 
         public async Task<bool> PutAsync(T4 id, T3 entity)
         {
-            var existingEntity = await _repository.FirstOrDefaultAsync(x => x.Id.ToString() == id.ToString()).ConfigureAwait(false);
+            var existingEntity = await _repository.FirstOrDefaultAsync(x => id.Equals(x.Id) && !x.Deleted);
             if (existingEntity is null) return false;
 
             _mapper.Map(entity, existingEntity);
@@ -56,7 +56,7 @@ namespace Ecommerce.Service.Services.Base
 
         public async Task<bool> DeleteAsync(T4 id)
         {
-            var existingEntity = await _repository.FirstOrDefaultAsync(x => x.Id.ToString() == id.ToString()).ConfigureAwait(false);
+            var existingEntity = await _repository.FirstOrDefaultAsync(x => id.Equals(x.Id) && !x.Deleted);
             if (existingEntity is null) return false;
             _repository.Delete(existingEntity);
             return await _unitOfWork.SaveAsync();
@@ -64,7 +64,7 @@ namespace Ecommerce.Service.Services.Base
 
         public async Task<bool> DeleteLogicAsync(DeletedInfo<T4> entity)
         {
-            var existingEntity = await _repository.FirstOrDefaultAsync(x => x.Id.ToString() == entity.Id.ToString()).ConfigureAwait(false);
+            var existingEntity = await _repository.FirstOrDefaultAsync(x => entity.Id.Equals(x.Id) && !x.Deleted);
             if (existingEntity is null) return false;
             existingEntity.ModificationDate = DateTime.Now;
             existingEntity.Deleted = true;
