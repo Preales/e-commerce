@@ -76,9 +76,8 @@ namespace Ecommerce.Infrastructure.Repository
             return query.FirstOrDefault(where);
         }
 
-        public async Task<TResult> GetFirstOrDefaultAsync<TResult>(
-            Expression<Func<TEntity, TResult>> selector,
-            Expression<Func<TEntity, bool>> predicate = null,
+        public async Task<TEntity> FirstOrDefaultAsync(
+            Expression<Func<TEntity, bool>> where = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
             Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> include = null,
             bool disableTracking = true)
@@ -94,18 +93,18 @@ namespace Ecommerce.Infrastructure.Repository
                 query = include(query);
             }
 
-            if (predicate != null)
+            if (where != null)
             {
-                query = query.Where(predicate);
+                query = query.Where(where);
             }
 
             if (orderBy != null)
             {
-                return await orderBy(query).Select(selector).FirstOrDefaultAsync();
+                return await orderBy(query).FirstOrDefaultAsync();
             }
             else
             {
-                return await query.Select(selector).FirstOrDefaultAsync();
+                return await query.FirstOrDefaultAsync();
             }
         }
 
