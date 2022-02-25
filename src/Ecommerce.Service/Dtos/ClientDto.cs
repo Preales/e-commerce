@@ -4,6 +4,7 @@ namespace Ecommerce.Service.Dtos
 {
     public class ClientDto
     {
+        public string Id { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Telephone { get; set; }
@@ -13,7 +14,6 @@ namespace Ecommerce.Service.Dtos
 
     public class ClientUpdateDto : ClientDto
     {
-        public string Id { get; set; }
         public DateTime? ModificationDate { get; set; }
     }
 }

@@ -5,6 +5,7 @@ namespace Ecommerce.Service.Dtos
 {
     public class OrderDto
     {
+        public Guid Id { get; set; }
         public string ClientId { get; set; }
         public Guid ShippingId { get; set; }
         public decimal DiscountTotal { get; set; }
@@ -15,7 +16,12 @@ namespace Ecommerce.Service.Dtos
 
     public class OrderUpdateDto : OrderDto
     {
-        public Guid Id { get; set; }
         public DateTime? ModificationDate { get; set; }
+    }
+
+    public class OrderInlcudeDto : OrderDto
+    {
+        public ClientDto Client { get; set; }
+        public ShippingUpdateDto Shipping { get; set; }
     }
 }

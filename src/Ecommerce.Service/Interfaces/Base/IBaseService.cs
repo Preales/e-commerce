@@ -1,5 +1,4 @@
 ﻿using Ecommerce.Common.Dtos;
-using Ecommerce.Infrastructure.Entities.Base;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

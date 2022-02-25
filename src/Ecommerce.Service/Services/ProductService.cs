@@ -3,13 +3,13 @@ using Ecommerce.Infrastructure.Entities;
 using Ecommerce.Infrastructure.UnitOfWork;
 using Ecommerce.Service.Dtos;
 using Ecommerce.Service.Interfaces;
-using System;
+using Ecommerce.Service.Services.Base;
 
-namespace Ecommerce.Service.Services.Base
+namespace Ecommerce.Service.Services
 {
-    public class ShippingService : BaseService<Shipping, ShippingDto, ShippingUpdateDto, Guid>, IShippingService
+    public class ProductService : BaseService<Product, ProductDto, ProductUpdateDto, int>, IProductService
     {
-        public ShippingService(
+        public ProductService(
             IUnitOfWork unitOfWork,
             IMapper mapper) : base(unitOfWork, mapper)
         {

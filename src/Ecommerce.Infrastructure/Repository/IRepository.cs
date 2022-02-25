@@ -28,13 +28,12 @@ namespace Ecommerce.Infrastructure.Repository
             string orderBy,
             bool ascending = true);
 
-        Task<TEntity> FirstOrDefaultAsync(
-            Expression<Func<TEntity, bool>> where,
-            params Expression<Func<TEntity, object>>[] includeProperties);
+        //Task<TEntity> FirstOrDefaultAsync(
+        //    Expression<Func<TEntity, bool>> where,
+        //    params Expression<Func<TEntity, object>>[] includeProperties);
 
-        Task<TResult> GetFirstOrDefaultAsync<TResult>(
-            Expression<Func<TEntity, TResult>> selector,
-            Expression<Func<TEntity, bool>> predicate = null,
+        Task<TEntity> FirstOrDefaultAsync(
+            Expression<Func<TEntity, bool>> where = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
             Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> include = null,
             bool disableTracking = true);
