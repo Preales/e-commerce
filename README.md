@@ -1,5 +1,5 @@
-## **E-Commerce .Net Core 5.0**
-Bienvenido al repositorio de una WebAPI para la simulación pago y creación de pedido de un comercio electrónico, creado con el framework **CORE 5.0** y arquitectura **DDD.**
+## **E-Commerce .Net 5**
+Bienvenido al repositorio de una WebAPI para la simulación pago y creación de pedido de un comercio electrónico, creado con el framework **NET 5.0** y arquitectura **DDD.**
 ### **Estructura del proyecto**
 #### ![](https://github.com/Preales/e-commerce/blob/main/docs/images/1.png)
 
@@ -37,7 +37,7 @@ El servicio de Order tiene un endpoint en particular, el cual es **GetByIdInclud
 ![](https://github.com/Preales/e-commerce/blob/main/docs/images/7.png)
 
 ### **Modo de uso**
-Para realizar las operaciones de sumatoria de los productos y generar un pedido, debemos usar el endpoint de **Payments**;** esta operación recibe cómo cuerpo la siguiente información en tipo json.
+Para realizar las operaciones de sumatoria de los productos y generar un pedido, debemos usar el endpoint de **Payments** esta operación recibe cómo cuerpo la siguiente información en tipo json.
 
 ![](https://github.com/Preales/e-commerce/blob/main/docs/images/8.png)
 
