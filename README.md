@@ -12,7 +12,7 @@ Bienvenido al repositorio de una WebAPI para la simulación pago y creación de 
 ### **Database**
  **SQL Server**
 - Al ejecutar el proyecto se creará la base de datos, las tablas y datos semillas, creador por medio de migraciones
-
+> La migración incluye 3 clientes, 3 productos y un dato de envío por cada cliente
 ### **Diagrama de entidades**
 ![](https://github.com/Preales/e-commerce/blob/main/docs/images/2.png)
 
