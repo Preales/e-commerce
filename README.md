@@ -67,5 +67,5 @@ Este es un objeto para crear un pedido
   ]
 }
 ```
-Para realizar pruebas online, puede ingresar al siguiente link [E-Commerce](http://ecommerce-preales.azurewebsites.net/swagger/index.html)
+Para realizar pruebas online, puede ingresar al siguiente link [E-Commerce](https://ecommerce-preales.azurewebsites.net/swagger/index.html)
 La aplicación esta desplegada en un AppService de Azure y usa Azure SQL Database
